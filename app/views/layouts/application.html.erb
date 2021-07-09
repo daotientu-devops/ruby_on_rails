@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby 5 books store</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="store">
+    <div id="banner">
+      <%= image_tag('/logo.png', :height => '50px') %>
+      <%= @page_title || 'Books Store' %>
+    </div>
+    <div id="columns">
+      <div id="side">
+        <a href="/">Home</a><br/>        
+        <a href="/products">Products</a><br/>
+        <a href="/customers">Customers</a><br/>
+        <a href="/orders">Orders</a><br/>
+      </div>
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>  
+  </body>
+</html>

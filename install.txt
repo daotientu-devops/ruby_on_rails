@@ -1,0 +1,5 @@
+rails server -e development -b 0.0.0.0 -p 4000
+
+// How to fix Rails's warning messages with Ruby 2.7.0
+export RUBYOPT='-W0'
+

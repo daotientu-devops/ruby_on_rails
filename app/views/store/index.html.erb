@@ -1,0 +1,14 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+<h1>Product List</h1>
+<% @products.each do |product| %>
+    <div class="entry">
+        <%= image_tag(product.image_url) %>
+        <h3><%= product.title %></h3>
+        <%= sanitize(product.description) %> <!-- sanitize() có tác dụng loại bỏ một số thẻ ký tự lạ trong một chuỗi -->
+        <div class="price_line">
+            <span class="price"><%= number_to_currency(product.price) %></span><!-- chuyển một số sang một chuỗi và chèn thêm ký tự định dạng tiền tệ vào trước (mặc định là U.S dollar $) -->
+        </div>
+    </div>
+<% end %>
